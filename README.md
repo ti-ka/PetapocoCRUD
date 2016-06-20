@@ -2,7 +2,7 @@
 CRUD Operations Helper for Petapoco
 
 
-Say you have a class Contact. Extend DbContext<Contact>
+Say you have a class Contact. Extend `DbContext<Contact>`
 
     [PetaPoco.PrimaryKey("Id")]
     [PetaPoco.TableName("Ac_Contact")]
@@ -50,8 +50,16 @@ Find singal item by Primary Key
             
 
 #For list of objects i.e. `List<Contact>` (SaveAll, DeleteAll, InsertAll, UpdateAll)
-          List<Contacts> contacts =  Contact.Where("PhoneNumber", 9856875182);
-          contacts.DeleteAll();
+         
+        var contacts = new List<Contact>
+        {
+            new Contact{ Title = "Ms.", FirstName = "One Love" },
+            new Contact{ Title = "Ms.", FirstName = "Two Love" }
+        };
+
+        contacts.SaveAll();
+
+        Contact.Where("Title", "Ms.").DeleteAll();
           
           
           
