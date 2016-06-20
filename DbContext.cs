@@ -84,7 +84,7 @@ namespace Prognose.Web.Models
             }
 
 
-            return MethodBase.GetCurrentMethod().DeclaringType.Name;
+            return typeof(T).Name;
         }
 
         protected static string PrimaryKey()
